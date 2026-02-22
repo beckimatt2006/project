@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flight Route Optimizer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+
+<h1>🌍 Flight Carbon Optimization Simulator</h1>
+
+<div class="panel">
+  <input id="origin" placeholder="Origin (DXB)">
+  <input id="destination" placeholder="Destination (LHR)">
+
+  <select id="aircraft">
+    <option>A320</option>
+    <option>B777</option>
+    <option>A380</option>
+  </select>
+
+  <button onclick="runSim()">Simulate</button>
+</div>
+<div id="summary" style="
+  width: 90%;
+  max-width: 1200px;
+  margin: 24px auto 18px;
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  justify-content: center;
+">
+
+ <div id="routeHeader" style="
+    display:none;
+    flex: 1;
+    min-width: 320px;
+    max-width: 360px;
+    text-align: center;
+    "></div>
+
+  <div id="graphBox" style="
+    display:none;
+    flex: 1;
+    min-width: 360px;
+    max-width: 520px;
+    justify-content: center;
+  ">
+      <img id="graph" alt="Flight metrics graph" style="
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      ">
+    </div>
+  </div>
+
+</div>
+<h2 style="
+  width:75%;
+  max-width:900px;
+  margin:30px auto 10px auto;
+  text-align:center;
+  font-weight:700;
+  letter-spacing:0.5px;
+">
+  🛫 Flight Route Map Simulation
+</h2>
+<div id="map"
+     style="
+       height:420px;
+       width:80%;
+       max-width:900px;
+       margin:30px auto 40px auto;  /* adds space below map */
+       border-radius:12px;
+       overflow:hidden;
+       border:1px solid rgba(255,255,255,0.12);
+       box-shadow:0 10px 30px rgba(0,0,0,0.35);
+     ">
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html> 
