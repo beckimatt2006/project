@@ -59,11 +59,11 @@ function drawRoute(routeCoords) {
     markers.push(m);
   });
 
-  routeLine = L.polyline(latlngs, {
-  color: "#22c55e",   
+  routeLine = L.geodesic(latlngs, {
   weight: 5,
-  opacity: 0.85,
-  dashArray: "8 6"     
+  opacity: 0.9,
+  color: "#34b664",
+  wrap: false
   }).addTo(map);
   routeLine.setStyle({
   className: "glow-line"
