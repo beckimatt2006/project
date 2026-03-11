@@ -55,7 +55,7 @@ def optimize(data: FlightInput):
 
    
     graph_path = plot_flight_metrics(
-        best["distance_km"], best["fuel_kg"], best["carbon_kg"], best["safety_score"]
+        best["distance_km"], best["fuel_kg"], best["carbon_kg"]
     )
 
     route_coords = []

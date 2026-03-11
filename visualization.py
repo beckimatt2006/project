@@ -1,9 +1,11 @@
 import os
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 BASE_DIR = "frontend"
 
-def plot_flight_metrics(distance, fuel, carbon, safety):
+def plot_flight_metrics(distance, fuel, carbon):
     if not os.path.exists(BASE_DIR):
         os.makedirs(BASE_DIR)
 
@@ -36,20 +38,6 @@ def plot_flight_metrics(distance, fuel, carbon, safety):
             va="bottom",
             fontsize=10
         )
-
-    ax2 = ax1.twinx()
-    ax2.set_ylim(0, 100)
-    ax2.set_ylabel("Safety (0–100)")
-    ax2.plot(["Safety Score"], [safety], marker="o", linewidth=2, color="#3b82f6")
-    
-    ax2.text(
-        0,
-        safety + 2,
-        f"{int(safety)}",
-        ha="center",
-        fontsize=12,
-        fontweight="bold"
-    )
 
     plt.tight_layout()
 

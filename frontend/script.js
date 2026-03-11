@@ -130,8 +130,7 @@ function renderSummary(best) {
     <p><strong>Total Distance:</strong> ${formatNumber(best.distance_km)} km</p>
     <p><strong>Total Fuel:</strong> ${formatNumber(best.fuel_kg)} kg</p>
     <p><strong>Total Carbon Emission:</strong> ${formatNumber(best.carbon_kg)} kg CO2</p>
-    <p><strong>Safety Score:</strong> ${formatNumber(best.safety_score)} /100</p>
   `;
   document.getElementById("routeHeader").innerHTML = summaryHTML;
   document.getElementById("routeHeader").style.display = "block";
-} 
+}  

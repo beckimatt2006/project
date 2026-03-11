@@ -16,13 +16,10 @@ def simulate_route(origin, destination, aircraft, weather):
     fuel = distance * aircraft["fuel_burn"] * weather
     carbon = fuel * 3.16
 
-    safety = max(60, 100 - int(weather * 12))
-
     return {
         "distance_km": round(distance, 2),
         "fuel_kg": round(fuel, 2),
-        "carbon_kg": round(carbon, 2),
-        "safety_score": safety
+        "carbon_kg": round(carbon, 2)
     }
 def simulate_route_multi(points, aircraft, weather):
     total_distance = 0.0
@@ -33,10 +30,8 @@ def simulate_route_multi(points, aircraft, weather):
 
     fuel = total_distance * aircraft["fuel_burn"] * weather
     carbon = fuel * 3.16
-    safety = max(60, 100 - int(weather * 12))
     return {
         "distance_km": round(total_distance, 2),
         "fuel_kg": round(fuel, 2),
-        "carbon_kg": round(carbon, 2),
-        "safety_score": safety
+        "carbon_kg": round(carbon, 2)
     }
